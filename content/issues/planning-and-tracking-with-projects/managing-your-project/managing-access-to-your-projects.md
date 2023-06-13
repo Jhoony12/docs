@@ -23,9 +23,21 @@ Project admins can also control the visibility of their project for everyone on 
 
 ## Managing access for organization-level projects
 
+You can control access to your project by setting permissions for particular individuals and teams or you can set a base permission that applies to everyone in your organization.
+
 ### Managing access for everyone in your organization
 
+{% ifversion projects-v2-default-base-permission %}
+
+You can manage access for everyone in your organization to a particular project by changing the project's base permission. Changes to the base permission only affect organization members who are not organization owners and who are not granted individual access.
+
+You can also configure the default base permission at the organization-level for new projects and projects that haven't yet had a base permission configured. For more information about setting your organization's base permission for projects, see "[AUTOTITLE](/organizations/managing-organization-settings/managing-base-permissions-for-projects)."
+
+{% else %}
+
 The default base role is `write`, meaning that everyone in the organization can see and edit your project. To change project access for everyone in the organization, you can change the base role. Changes to the base role only affect organization members who are not organization owners and who are not granted individual access.
+
+{% endif %}
 
 {% data reusables.projects.project-settings %}
 1. Click **Manage access**.
@@ -54,7 +66,7 @@ You can only invite an individual user to collaborate on your organization-level
 1. Click **Manage access**.
 2. Under **Invite collaborators**, search for the team or individual user that you want to invite.
 
-   ![Screenshot showing searching for a collaborator](/assets/images/help/projects-v2/access-search.png)
+   ![Screenshot showing searching for a collaborator.](/assets/images/help/projects-v2/access-search.png)
    
 3. Select the role for the collaborator.
    - **Read**: The team or individual can view the project.
@@ -70,7 +82,7 @@ You can only invite an individual user to collaborate on your organization-level
 
    You can use the **Type** and **Role** drop-down menus to filter the access list.
    
-   ![Screenshot showing a collaborator](/assets/images/help/projects-v2/access-find-member.png)
+   ![Screenshot showing a collaborator.](/assets/images/help/projects-v2/access-find-member.png)
 
 1. Edit the role for the collaborator(s).
 1. Optionally, click **Remove** to remove the collaborator(s).
@@ -89,7 +101,7 @@ This only affects collaborators for your project, not for repositories in your p
 1. Click **Manage access**.
 2. Under **Invite collaborators**, search for the user that you want to invite.
 
-   ![Screenshot showing searching for a collaborator](/assets/images/help/projects-v2/access-search.png)
+   ![Screenshot showing searching for a collaborator.](/assets/images/help/projects-v2/access-search.png)
    
 3. Select the role for the collaborator.
    - **Read**: The individual can view the project.
