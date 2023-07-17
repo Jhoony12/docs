@@ -24,7 +24,7 @@ redirect_from:
 
 ## Synopsis
 
-```shell{:copy}
+```shell copy
 codeql database init --source-root=<dir> [--language=<lang>[,<lang>...]] [--github-auth-stdin] [--github-url=<url>] [--extractor-option=<extractor-option-name=value>] <options>... -- <database>
 ```
 
@@ -46,10 +46,10 @@ extractors in the middle of an extraction operation anyway.)
 #### `<database>`
 
 \[Mandatory] Path to the CodeQL database to create. This directory will
-be created, and *must not* already exist (but its parent must).
+be created, and _must not_ already exist (but its parent must).
 
 If the `--db-cluster` option is given, this will not be a database
-itself, but a directory that will *contain* databases for several
+itself, but a directory that will _contain_ databases for several
 languages built from the same source root.
 
 It is important that this directory is not in a location that the build

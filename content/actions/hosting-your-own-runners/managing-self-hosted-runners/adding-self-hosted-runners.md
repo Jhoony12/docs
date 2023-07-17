@@ -52,6 +52,16 @@ You can register ephemeral runners that perform a single job before the registra
 
 You can add self-hosted runners to a single repository. To add a self-hosted runner to a user repository, you must be the repository owner. For an organization repository, you must be an organization owner or have admin access to the repository. For information about how to add a self-hosted runner with the REST API, see "[AUTOTITLE](/rest/actions#self-hosted-runners)."
 
+{% ifversion actions-disable-repo-runners %}
+
+{% note %}
+
+**Note**: {% data reusables.actions.disable-selfhosted-runners-crossrefs %}
+
+{% endnote %}
+
+{% endif %}
+
 {% data reusables.repositories.navigate-to-repo %}
 {% data reusables.repositories.sidebar-settings %}
 {% data reusables.repositories.settings-sidebar-actions-runners %}
@@ -64,7 +74,6 @@ For more information, see "[AUTOTITLE](/actions/hosting-your-own-runners/managin
 ## Adding a self-hosted runner to an organization
 
 You can add self-hosted runners at the organization level, where they can be used to process jobs for multiple repositories in an organization. To add a self-hosted runner to an organization, you must be an organization owner. For information about how to add a self-hosted runner with the REST API, see "[AUTOTITLE](/rest/actions#self-hosted-runners)."
-
 
 {% data reusables.organizations.navigate-to-org %}
 {% data reusables.organizations.org_settings %}

@@ -32,7 +32,7 @@ You can also create {% data variables.product.prodname_codeql %} databases yours
 - Install and set up the {% data variables.product.prodname_codeql_cli %}. For more information, see "[Getting started with the {% data variables.product.prodname_codeql_cli %}](/code-security/codeql-cli/using-the-codeql-cli/getting-started-with-the-codeql-cli)."
 - Check out the version of your codebase you want to analyze. The directory should be ready to build, with all dependencies already installed.
 
-For information about using the {% data variables.product.prodname_codeql_cli %} in a third-party CI system to create results to display in {% data variables.product.prodname_dotcom %} as code scanning alerts, see [Configuring {% data variables.product.prodname_codeql_cli %} in your CI system](/code-security/code-scanning/using-codeql-code-scanning-with-your-existing-ci-system/configuring-codeql-cli-in-your-ci-system). For information about enabling {% data variables.product.prodname_codeql %} code scanning using {% data variables.product.prodname_actions %}, see [Setting up code scanning for a repository](/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/configuring-code-scanning-for-a-repository).
+For information about using the {% data variables.product.prodname_codeql_cli %} in a third-party CI system to create results to display in {% data variables.product.prodname_dotcom %} as code scanning alerts, see [Configuring {% data variables.product.prodname_codeql_cli %} in your CI system](/code-security/code-scanning/using-codeql-code-scanning-with-your-existing-ci-system/configuring-codeql-cli-in-your-ci-system). For information about enabling {% data variables.product.prodname_codeql %} code scanning using {% data variables.product.prodname_actions %}, see {% ifversion code-scanning-without-workflow %}"[AUTOTITLE](/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/configuring-default-setup-for-code-scanning)" and {% endif %}"[AUTOTITLE](/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/configuring-advanced-setup-for-code-scanning)."
 
 ## Running `codeql database create`
 
@@ -55,7 +55,7 @@ You must specify:
 | Java{% ifversion codeql-kotlin-beta %}/Kotlin{% endif %} | `java`
 | JavaScript/TypeScript | `javascript`
 | Python | `python`
-| Ruby | `ruby` {% ifversion codeql-swift-beta %} 
+| Ruby | `ruby` {% ifversion codeql-swift-beta %}
 | Swift | `swift` {% endif %}
 
 {% data reusables.code-scanning.beta-kotlin-or-swift-support %}
@@ -213,9 +213,9 @@ The following examples are designed to give you an idea of some of the build com
 
 {% ifversion codeql-swift-beta %}
 - Swift project built from an Xcode project or workspace. By default, the largest Swift target is built:
-	
+
 	   It's a good idea to ensure that the project is in a clean state and that there are no build artefacts available.
-	
+
 	   ```
 	   xcodebuild clean -all
 	   codeql database create -l swift swift-database
@@ -233,13 +233,14 @@ The following examples are designed to give you an idea of some of the build com
       codeql database create -l swift -c "xcodebuild build -target your-target" swift-database
    ```
 
-   You can pass the `archive` and `test` options to `xcodebuild`. However, the standard `xcodebuild` command is recommended as it should be the fastest, and should be all that CodeQL requires for a successful scan. 
+   You can pass the `archive` and `test` options to `xcodebuild`. However, the standard `xcodebuild` command is recommended as it should be the fastest, and should be all that CodeQL requires for a successful scan.
 
 - Swift project built using a custom build script:
 
    ```
    codeql database create -l swift -c "./scripts/build.sh" swift-database
    ```
+
 {% endif %}
 
 - Project built using Bazel:
@@ -405,7 +406,7 @@ steps:
 You can check if a repository has any {% data variables.product.prodname_codeql %} databases available for download using the `/repos/<owner>/<repo>/code-scanning/codeql/databases` endpoint. For example, to check for {% data variables.product.prodname_codeql %} databases using the [{% data variables.product.prodname_cli %}](https://cli.github.com/manual/gh_api) you would run:
 
 ```
-gh api /repos/<owner>/<repo>/code-scanning/codeql/databases/
+gh api /repos/<owner>/<repo>/code-scanning/codeql/databases
 ```
 
 This command returns information about any {% data variables.product.prodname_codeql %} databases that are available for a repository, including the language the database represents, and when the database was last updated. If no {% data variables.product.prodname_codeql %} databases are available, the response is empty.
